@@ -33,7 +33,7 @@ nav {
     top: 5px;
     background: white;
     width: 100%;
-    transition: 300ms;
+    transition: all 300ms;
     height: 50vh;
 }
 
@@ -47,8 +47,22 @@ nav {
     margin: 35px 20px 0 0;
 }
 
+.about-drop,
+.rugby-drop,
+.getinv-drop {
+    position: absolute;
+    top: -100%;
+    overflow: hidden;
+    transition: ease-in-out 300ms;
+}
+
 .show-menu {
     left: 0;
+}
+
+.show-second-menu {
+    display: block;
+    position: relative;
 }
 
 li {
@@ -68,10 +82,6 @@ header i {
 
 ul li {
     padding: 10px;
-}
-
-ul li ul li {
-    display: none;
 }
 
 main {
