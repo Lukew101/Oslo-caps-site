@@ -33,11 +33,14 @@ openGetInvolved.addEventListener('click', function(){
 });
 
 // Home Page image slider
+
 const images = ['/Images/team-hands-in.jpg', '/Images/oslo-pirates-together.jpg', '/Images/captain-talk.jpg', '/Images/Line-defence.jpg', '/Images/2-caps-tackle-other.jpg', '/Images/trond-caps-together-2.jpg', '/Images/caps-player-running-ball.jpg', '/Images/caps-trond-together.jpg', '/Images/caps-2014.jpg'];
 const homeImage = document.querySelector('.home-image');
+const leftImgSlider = document.querySelector('.left-img-slider');
+const rightImgSlider = document.querySelector('.right-img-slider');
 const interval = setInterval(function(){
     starthomeImage();
-}, 5000);
+}, 8000);
 var index = 1;
 
 starthomeImage = () => {
