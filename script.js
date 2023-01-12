@@ -1,3 +1,28 @@
+const navSlide = () => {
+    const burger = document.querySelector(".burger");
+    const nav = document.querySelector(".nav-menu-ul");
+    const navMenuUl = document.querySelectorAll(".nav-menu-ul li");
+    
+    burger.addEventListener('click', () =>{
+        // Toggle nav
+        nav.classList.toggle("nav-active");
+
+        // Animate links
+        navMenuUl.forEach((link, index) =>{
+            if(link.style.animation){
+                link.style.animation = "";
+            } else {
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 5}s`
+            }
+        });
+        // Burger animation
+        burger.classList.toggle("toggle");
+    });
+};
+navSlide();
+
+
+/*
 const mainMenu = document.querySelector('.main-menu');
 const openMenu = document.querySelector('.open-menu');
 const closeMenu = document.querySelector('.close-menu');
@@ -31,6 +56,7 @@ openGetInvolved.addEventListener('click', function(){
     getInvolvedNav.classList.toggle('show-second-menu');
     console.log(getInvolvedNav);
 });
+*/
 
 // Home Page image slider
 
