@@ -1,7 +1,9 @@
+// Nav menu
 const navSlide = () => {
     const burger = document.querySelector(".burger");
     const nav = document.querySelector(".nav-menu-ul");
     const navMenuUl = document.querySelectorAll(".nav-menu-ul li");
+    const overlay = document.querySelector(".overlay");
     
     burger.addEventListener('click', () =>{
         // Toggle nav
@@ -17,32 +19,20 @@ const navSlide = () => {
         });
         // Burger animation
         burger.classList.toggle("toggle");
+        // Back nav screen shade
+        overlay.classList.toggle("overlay-opn");
     });
 };
 navSlide();
 
-
-/*
+// Nav sub-Menu
 const mainMenu = document.querySelector('.main-menu');
-const openMenu = document.querySelector('.open-menu');
-const closeMenu = document.querySelector('.close-menu');
 const openAbout = document.querySelector('.open-about');
 const openRugby = document.querySelector('.open-rugby');
 const openGetInvolved = document.querySelector('.open-get-inv');
 const getInvolvedNav = document.querySelector('.getinv-drop');
 const rugbyNav = document.querySelector('.rugby-drop');
 const aboutNav = document.querySelector('.about-drop');
-
-
-
-// Nav Menu
-openMenu.addEventListener('click', function(){
-    mainMenu.classList.toggle('show-menu');
-});
-
-closeMenu.addEventListener('click', function(){
-    mainMenu.classList.remove('show-menu');
-});
 
 openAbout.addEventListener('click', function(){
     aboutNav.classList.toggle('show-second-menu');
@@ -54,9 +44,7 @@ openRugby.addEventListener('click', function(){
 
 openGetInvolved.addEventListener('click', function(){
     getInvolvedNav.classList.toggle('show-second-menu');
-    console.log(getInvolvedNav);
 });
-*/
 
 // Home Page image slider
 
