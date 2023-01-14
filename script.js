@@ -4,26 +4,46 @@ const navSlide = () => {
     const nav = document.querySelector(".nav-menu-ul");
     const navMenuUl = document.querySelectorAll(".nav-menu-ul li");
     const overlay = document.querySelector(".overlay");
+    const SecondNavUlDrop = document.querySelectorAll(".nav-menu-ul li ul li");
     
     burger.addEventListener('click', () =>{
         // Toggle nav
-        nav.classList.toggle("nav-active");
-
+        let navActive= nav.classList.toggle("nav-active");
         // Animate links
         navMenuUl.forEach((link, index) =>{
             if(link.style.animation){
                 link.style.animation = "";
             } else {
-                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 5}s`
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 30}s`;
             }
+        });
+        //Second layer of nav drop
+        SecondNavUlDrop.forEach((link, index) =>{
+                link.style.animation = `navLinkFade 0.3s ease forwards 0.1s`;
         });
         // Burger animation
         burger.classList.toggle("toggle");
         // Back nav screen shade
         overlay.classList.toggle("overlay-opn");
     });
+   // Close nav when clicking outside of nav bar
+   function closeNavFromOutside(){
+    document.onclick = function(e){
+        if(e.target !== nav && e.target !== burger){
+            nav.classList.remove("nav-active");
+            burger.classList.remove("toggle");
+            overlay.classList.remove("overlay-opn");
+        }
+    };
+};
+closeNavFromOutside()
 };
 navSlide();
+
+ 
+    
+    
+
 
 // Nav sub-Menu
 const mainMenu = document.querySelector('.main-menu');
