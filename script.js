@@ -1,11 +1,11 @@
+const burger = document.querySelector(".burger");
+const nav = document.querySelector(".nav-menu-ul");
+const navMenuUl = document.querySelectorAll(".nav-menu-ul li");
+const overlay = document.querySelector(".overlay");
+const secondNavUlDrop = document.querySelectorAll(".nav-menu-ul li ul li");
+const navLiElements = document.querySelectorAll("nav li");
 // Nav menu
 const navSlide = () => {
-    const burger = document.querySelector(".burger");
-    const nav = document.querySelector(".nav-menu-ul");
-    const navMenuUl = document.querySelectorAll(".nav-menu-ul li");
-    const overlay = document.querySelector(".overlay");
-    const SecondNavUlDrop = document.querySelectorAll(".nav-menu-ul li ul li");
-    
     burger.addEventListener('click', () =>{
         // Toggle nav
         let navActive= nav.classList.toggle("nav-active");
@@ -15,35 +15,34 @@ const navSlide = () => {
                 link.style.animation = "";
             } else {
                 link.style.animation = `navLinkFade 0.5s ease forwards ${index / 30}s`;
-            }
+            };
         });
         //Second layer of nav drop
-        SecondNavUlDrop.forEach((link, index) =>{
-                link.style.animation = `navLinkFade 0.3s ease forwards 0.1s`;
+        secondNavUlDrop.forEach((link) =>{
+            link.style.animation = `navLinkFade 0.3s ease forwards 0.1s`;
         });
         // Burger animation
         burger.classList.toggle("toggle");
         // Back nav screen shade
         overlay.classList.toggle("overlay-opn");
     });
-   // Close nav when clicking outside of nav bar
-   function closeNavFromOutside(){
-    document.onclick = function(e){
-        if(e.target !== nav && e.target !== burger){
-            nav.classList.remove("nav-active");
-            burger.classList.remove("toggle");
-            overlay.classList.remove("overlay-opn");
-        }
-    };
-};
-closeNavFromOutside()
 };
 navSlide();
 
- 
-    
-    
-
+// Close nav when clicking outside of nav bar
+function closeNavFromOutside(){
+    document.onclick = function(e){
+        if(!e.target.closest("nav")){
+            nav.classList.remove("nav-active");
+            burger.classList.remove("toggle");
+            overlay.classList.remove("overlay-opn");
+            navMenuUl.forEach((link) =>{
+                link.style.animation = "";
+            })
+        };
+    }
+};
+closeNavFromOutside()
 
 // Nav sub-Menu
 const mainMenu = document.querySelector('.main-menu');
@@ -66,8 +65,24 @@ openGetInvolved.addEventListener('click', function(){
     getInvolvedNav.classList.toggle('show-second-menu');
 });
 
-// Home Page image slider
+// Arrow rotation on click
+const aboutArrow = document.querySelector('.about-arrow');
+const rugbyArrow = document.querySelector('.rugby-arrow');
+const getInvArrow = document.querySelector('.getinv-arrow');
 
+aboutArrow.addEventListener("click", function(){
+    aboutArrow.classList.toggle("arrow-rotate");
+});
+
+rugbyArrow.addEventListener("click", function(){
+    rugbyArrow.classList.toggle("arrow-rotate");
+});
+
+getInvArrow.addEventListener("click", function(){
+    getInvArrow.classList.toggle("arrow-rotate");
+});
+
+// Home Page image slider
 const images = ['/Images/team-hands-in.jpg', '/Images/oslo-pirates-together.jpg', '/Images/captain-talk.jpg', '/Images/Line-defence.jpg', '/Images/2-caps-tackle-other.jpg', '/Images/trond-caps-together-2.jpg', '/Images/caps-player-running-ball.jpg', '/Images/caps-trond-together.jpg', '/Images/caps-2014.jpg'];
 const homeImage = document.querySelector('.home-image');
 const leftImgSlider = document.querySelector('.left-img-slider');

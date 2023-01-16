@@ -12,6 +12,10 @@ nav{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+header > * {
+    margin-top: 10px;
+}
+
 .logo-div img {
     max-width: 120px;
 }
@@ -46,6 +50,10 @@ nav{
     background-color: black;
     margin: 5px;
     transition: all 300ms ease;
+}
+
+.arrow-rotate{
+    transform: rotate(180deg);
 }
 
 main {
