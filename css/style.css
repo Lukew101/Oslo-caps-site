@@ -65,17 +65,59 @@ main h1 {
 }
 
 .img-div {
-    text-align: center;
-    min-width: 300px;
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-.img-div img {
-    max-width: 80%;
-}
+  .image-content-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 0 10px;
+  }
 
-.img-div span {
-    top: 300px;
-}
+  .image-content-container img{
+    max-width: 95%;
+  }
+  
+  .fa-chevron-left,
+  .fa-chevron-right {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+  }
+  
+  .fa-chevron-left {
+    left: 0;
+  }
+  
+  .fa-chevron-right {
+    right: 0;
+  }
+
+  .circle-container {
+    display: flex;
+    position: absolute;
+    left: 38%;
+    top: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: gray;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .circle.active {
+    background-color: blue;
+  }
 
 @media(max-width: 900px){
     .nav-menu-ul{
