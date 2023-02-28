@@ -38,6 +38,8 @@ header > * {
 .nav-menu-ul li{
     list-style: none;
     margin: 0 20px;
+    min-width: 50px;
+    max-width: 150px;
 }
 
 .burger{
@@ -56,6 +58,14 @@ header > * {
     transform: rotate(180deg);
 }
 
+.flex-arrow{
+    display: flex;
+}
+
+.flex-arrow a{
+    flex-basis: 0;
+}
+
 main {
     margin-top: 50px;
 }
@@ -72,7 +82,7 @@ main h1 {
 
   .image-content-container {
     display: flex;
-    align-items: center;
+    justify-content: center;
     position: relative;
     margin: 0 10px;
   }
@@ -100,7 +110,6 @@ main h1 {
   .circle-container {
     display: flex;
     position: absolute;
-    left: 38%;
     top: 100%;
     justify-content: center;
     margin-top: 10px;
